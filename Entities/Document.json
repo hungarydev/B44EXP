@@ -1,0 +1,41 @@
+{
+  "name": "Document",
+  "type": "object",
+  "properties": {
+    "client_id": {
+      "type": "string"
+    },
+    "document_type": {
+      "type": "string",
+      "enum": [
+        "passport",
+        "driving_license",
+        "nda",
+        "privacy_policy",
+        "loan_agreement",
+        "risk_disclosure",
+        "trade_agreement"
+      ]
+    },
+    "file_url": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "approved",
+        "rejected"
+      ],
+      "default": "pending"
+    },
+    "signed": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "client_id",
+    "document_type"
+  ]
+}

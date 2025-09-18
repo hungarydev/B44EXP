@@ -1,0 +1,78 @@
+{
+  "name": "Trade",
+  "type": "object",
+  "properties": {
+    "client_id": {
+      "type": "string",
+      "description": "User ID of the client"
+    },
+    "symbol": {
+      "type": "string",
+      "enum": [
+        "GCZ25",
+        "SIZ25",
+        "HGZ25",
+        "BTZ25"
+      ],
+      "description": "Trading symbol"
+    },
+    "commodity": {
+      "type": "string",
+      "enum": [
+        "Gold",
+        "Silver",
+        "Copper",
+        "Bitcoin"
+      ]
+    },
+    "position_type": {
+      "type": "string",
+      "enum": [
+        "call",
+        "put"
+      ]
+    },
+    "contract_size": {
+      "type": "number"
+    },
+    "entry_price": {
+      "type": "number"
+    },
+    "current_price": {
+      "type": "number"
+    },
+    "strike_price": {
+      "type": "number"
+    },
+    "expiry_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "purchase_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "closed",
+        "expired"
+      ],
+      "default": "active"
+    },
+    "profit_loss": {
+      "type": "number",
+      "default": 0
+    },
+    "profit_loss_percentage": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": [
+    "client_id",
+    "symbol",
+    "commodity"
+  ]
+}
